@@ -98,6 +98,20 @@ class PrefetchingRocketConfig extends Config(
   new freechips.rocketchip.rocket.WithNHugeCores(1) ++                                  // single rocket-core
   new chipyard.config.AbstractConfig)
 
+class SingleNLPrefetchingRocketConfig extends Config(
+  new barf.WithTLDCachePrefetcher(barf.SingleNextLinePrefetcherParams()) ++
+  new chipyard.config.WithTilePrefetchers ++
+  new freechips.rocketchip.rocket.WithL1DCacheNonblocking(2) ++
+  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  new chipyard.config.AbstractConfig)
+
+class AMPMPrefetchingRocketConfig extends Config(
+  new barf.WithTLDCachePrefetcher(barf.SingleAMPMPrefetcherParams()) ++
+  new chipyard.config.WithTilePrefetchers ++
+  new freechips.rocketchip.rocket.WithL1DCacheNonblocking(2) ++
+  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  new chipyard.config.AbstractConfig)
+
 class BestOffsetPrefetchingRocketConfig extends Config(
   new barf.WithBestOffsetPrefetcher(barf.BestOffsetPrefetcherParams()) ++
   new chipyard.config.WithTilePrefetchers ++
