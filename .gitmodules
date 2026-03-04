@@ -163,3 +163,6 @@
 [submodule "generators/radiance"]
 	path = generators/radiance
 	url = https://github.com/ucb-bar/radiance.git
+[submodule "agentic-flow"]
+	path = agentic-flow
+	url = git@github.com:SmartAgentPrefetcher/agentic-flow.git

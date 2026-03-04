@@ -34,6 +34,20 @@ class BestOffsetPrefetchingLargeBoomV3Config extends Config(
   new chipyard.config.WithSystemBusWidth(128) ++
   new chipyard.config.AbstractConfig)
 
+class CyclicStridePrefetchingLargeBoomV3Config extends Config(
+  new barf.WithCyclicStridePrefetcher(barf.CyclicStridePrefetcherParams()) ++
+  new chipyard.config.WithTilePrefetchers ++
+  new boom.v3.common.WithNLargeBooms(1) ++                          // large boom config
+  new chipyard.config.WithSystemBusWidth(128) ++
+  new chipyard.config.AbstractConfig)
+
+class EvolvedPrefetchingLargeBoomV3Config extends Config(
+  new barf.WithEvolvedPrefetcher(barf.EvolvedPrefetcherParams()) ++
+  new chipyard.config.WithTilePrefetchers ++
+  new boom.v3.common.WithNLargeBooms(1) ++
+  new chipyard.config.WithSystemBusWidth(128) ++
+  new chipyard.config.AbstractConfig)
+
 class MegaBoomV3Config extends Config(
   new boom.v3.common.WithNMegaBooms(1) ++                           // mega boom config
   new chipyard.config.WithSystemBusWidth(128) ++
